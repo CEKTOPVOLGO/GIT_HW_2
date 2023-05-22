@@ -30,6 +30,13 @@ public class Laptop {
     public String getColor() {
         return color;
     }
+    public boolean getCheck() {
+        return check;
+    }
+    
+    public void setCheck(boolean check) {
+        this.check = check;
+    }
     public String toString() {        
         return "Модель: " + model + ", Объём ОЗУ: " + valueRAM + ", Объём ПЗУ: " + valueROM + ", ОС: " + operatingSystem + " Цвет: " + color;
     }
