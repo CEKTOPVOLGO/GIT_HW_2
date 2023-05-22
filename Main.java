@@ -24,10 +24,10 @@ public class Main {
         laptops.add(laptop5);
         laptops.add(laptop6);
         System.out.println("Здравствуйте, в наличии имеются следующие ноутбуки:");
-        for (Laptop laptop: laptops){
+        for (Laptop laptop : laptops) {
             System.out.println(laptop);
         }
-        while (check){
+        while (check) {
             System.out.println("По какому параметру желаете произвести отбор?:");
             System.out.println("1 - Объём ОЗУ.");
             System.out.println("2 - Объём ПЗУ.");
@@ -39,129 +39,121 @@ public class Main {
             int cnt = 0;
             switch (number) {
                 case 1:
-                cnt = 0;
-                List<Integer> list = new ArrayList<>();
-                System.out.println("В наличии следующие объёмы ОЗУ:");
-                for (Laptop laptop: laptops){
-                    if (!list.contains(laptop.getValueRAM()) && laptop.getCheck()){
-                        list.add(laptop.getValueRAM());
+                    cnt = 0;
+                    List<Integer> list = new ArrayList<>();
+                    System.out.println("В наличии следующие объёмы ОЗУ:");
+                    for (Laptop laptop : laptops) {
+                        if (!list.contains(laptop.getValueRAM()) && laptop.getCheck()) {
+                            list.add(laptop.getValueRAM());
+                        }
                     }
-                }
-                for (int i = 1; i <= list.size(); i++ ){
-                    System.out.println(i + " - " + list.get(i - 1) + " Гб");
-                }
-                System.out.print("Выберите подходящий объём: ");
-                number = scanner.nextInt();
-                System.out.println("Вам подходят следующие модели: ");
-                for (Laptop laptop: laptops){
-                    if (laptop.getValueRAM() == list.get(number - 1) && laptop.getCheck()){
-                        System.out.println(laptop);
-                        cnt++;
+                    for (int i = 1; i <= list.size(); i++) {
+                        System.out.println(i + " - " + list.get(i - 1) + " Гб");
                     }
-                    else{
-                        laptop.setCheck(false);
+                    System.out.print("Выберите подходящий объём: ");
+                    number = scanner.nextInt();
+                    System.out.println("Вам подходят следующие модели: ");
+                    for (Laptop laptop : laptops) {
+                        if (laptop.getValueRAM() == list.get(number - 1) && laptop.getCheck()) {
+                            System.out.println(laptop);
+                            cnt++;
+                        } else {
+                            laptop.setCheck(false);
+                        }
                     }
-                    } 
-                if (cnt == 1){
-                    check = false;   
-                }                    
+                    if (cnt == 1) {
+                        check = false;
+                    }
                     break;
                 case 2:
-                cnt = 0;
-                List<Integer> list1 = new ArrayList<>();
-                System.out.println("В наличии следующие объёмы ПЗУ:");
-                for (Laptop laptop: laptops){
-                    if (!list1.contains(laptop.getValueROM()) && laptop.getCheck()){
-                        list1.add(laptop.getValueROM());
+                    cnt = 0;
+                    List<Integer> list1 = new ArrayList<>();
+                    System.out.println("В наличии следующие объёмы ПЗУ:");
+                    for (Laptop laptop : laptops) {
+                        if (!list1.contains(laptop.getValueROM()) && laptop.getCheck()) {
+                            list1.add(laptop.getValueROM());
+                        }
                     }
-                }
-                for (int i = 1; i <= list1.size(); i++ ){
-                    System.out.println(i + " - " + list1.get(i - 1) + " Гб");
-                }
-                System.out.print("Выберите подходящий объём: ");
-                number = scanner.nextInt();
-                System.out.println("Вам подходят следующие модели: ");
-                for (Laptop laptop: laptops){
-                    if (laptop.getValueROM() == list1.get(number - 1) && laptop.getCheck()){
-                        System.out.println(laptop);
-                        cnt++;
+                    for (int i = 1; i <= list1.size(); i++) {
+                        System.out.println(i + " - " + list1.get(i - 1) + " Гб");
                     }
-                    else{
-                        laptop.setCheck(false);
+                    System.out.print("Выберите подходящий объём: ");
+                    number = scanner.nextInt();
+                    System.out.println("Вам подходят следующие модели: ");
+                    for (Laptop laptop : laptops) {
+                        if (laptop.getValueROM() == list1.get(number - 1) && laptop.getCheck()) {
+                            System.out.println(laptop);
+                            cnt++;
+                        } else {
+                            laptop.setCheck(false);
+                        }
                     }
-                    }    
-                if (cnt == 1){
-                    check = false;
-                }                         
+                    if (cnt == 1) {
+                        check = false;
+                    }
                     break;
                 case 3:
-                cnt = 0;
-                List<String> list2 = new ArrayList<>();
-                System.out.println("В наличии следующие ОС:");
-                for (Laptop laptop: laptops){
-                    if (!list2.contains(laptop.getOperatingSystem()) && laptop.getCheck()){
-                        list2.add(laptop.getOperatingSystem());
+                    cnt = 0;
+                    List<String> list2 = new ArrayList<>();
+                    System.out.println("В наличии следующие ОС:");
+                    for (Laptop laptop : laptops) {
+                        if (!list2.contains(laptop.getOperatingSystem()) && laptop.getCheck()) {
+                            list2.add(laptop.getOperatingSystem());
+                        }
                     }
-                }
-                for (int i = 1; i <= list2.size(); i++ ){
-                    System.out.println(i + " - " + list2.get(i - 1));
-                }
-                System.out.print("Выберите подходящую ОС: ");
-                number = scanner.nextInt();
-                System.out.println("Вам подходят следующие модели: ");
-                for (Laptop laptop: laptops){
-                    if (laptop.getOperatingSystem() == list2.get(number - 1) && laptop.getCheck()){
-                        System.out.println(laptop);
-                        cnt++;
+                    for (int i = 1; i <= list2.size(); i++) {
+                        System.out.println(i + " - " + list2.get(i - 1));
                     }
-                    else{
-                        laptop.setCheck(false);
-                    }                    
-                }    
-                if (cnt == 1){
-                    check = false;
-                }        
-                    
+                    System.out.print("Выберите подходящую ОС: ");
+                    number = scanner.nextInt();
+                    System.out.println("Вам подходят следующие модели: ");
+                    for (Laptop laptop : laptops) {
+                        if (laptop.getOperatingSystem() == list2.get(number - 1) && laptop.getCheck()) {
+                            System.out.println(laptop);
+                            cnt++;
+                        } else {
+                            laptop.setCheck(false);
+                        }
+                    }
+                    if (cnt == 1) {
+                        check = false;
+                    }
+
                     break;
                 case 4:
-                cnt = 0;
-                List<String> list3 = new ArrayList<>();
-                System.out.println("В наличии следующие цвета:");
-                for (Laptop laptop: laptops){
-                    if (!list3.contains(laptop.getColor()) && laptop.getCheck()){
-                        list3.add(laptop.getColor());
+                    cnt = 0;
+                    List<String> list3 = new ArrayList<>();
+                    System.out.println("В наличии следующие цвета:");
+                    for (Laptop laptop : laptops) {
+                        if (!list3.contains(laptop.getColor()) && laptop.getCheck()) {
+                            list3.add(laptop.getColor());
+                        }
                     }
-                }
-                for (int i = 1; i <= list3.size(); i++ ){
-                    System.out.println(i + " - " + list3.get(i - 1));
-                }
-                System.out.print("Выберите подходящий цвет: ");
-                number = scanner.nextInt();
-                System.out.println("Вам подходят следующие модели: ");
-                for (Laptop laptop: laptops){
-                    if (laptop.getColor() == list3.get(number - 1) && laptop.getCheck()){
-                        System.out.println(laptop);
-                        cnt++;
+                    for (int i = 1; i <= list3.size(); i++) {
+                        System.out.println(i + " - " + list3.get(i - 1));
                     }
-                    else{
-                        laptop.setCheck(false);
+                    System.out.print("Выберите подходящий цвет: ");
+                    number = scanner.nextInt();
+                    System.out.println("Вам подходят следующие модели: ");
+                    for (Laptop laptop : laptops) {
+                        if (laptop.getColor() == list3.get(number - 1) && laptop.getCheck()) {
+                            System.out.println(laptop);
+                            cnt++;
+                        } else {
+                            laptop.setCheck(false);
+                        }
                     }
-                }   
-                if (cnt == 1){
-                    check = false;
-                }                      
+                    if (cnt == 1) {
+                        check = false;
+                    }
                     break;
                 case 5:
                     check = false;
                     break;
-            
+
                 default:
                     break;
             }
-            
-
         }
-
-        
     }
 }
