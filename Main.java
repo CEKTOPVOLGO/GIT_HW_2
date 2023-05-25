@@ -153,8 +153,9 @@ public class Main {
                     break;
 
                 default:
-                    break;
+                    break;                    
             }
         }
+        System.out.println("Bye");
     }
 }
