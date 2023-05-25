@@ -23,7 +23,6 @@ public class Main {
         laptops.add(laptop4);
         laptops.add(laptop5);
         laptops.add(laptop6);
-        System.out.println("Привет");
         System.out.println("Здравствуйте, в наличии имеются следующие ноутбуки:");
         for (Laptop laptop : laptops) {
             System.out.println(laptop);
